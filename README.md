@@ -1,2 +1,1 @@
 # VaccineStockManagementWithMDPs.jl
-# VaccineStockManagementWithMDPs.jl
