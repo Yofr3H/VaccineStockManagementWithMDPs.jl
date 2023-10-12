@@ -1,34 +1,3 @@
-# `load_parameters.jl`
-
-```@docs
-load_parameters(json_file_name="../data/parameters_model.json")
-```
-
-# `get_stencil_projection.jl`
-```@docs
-get_stencil_projection(t, parameters)
-```
-This function is implemten by computing
-
-```math
-\begin{aligned}
-    \eta(t): = \sup
-        \{
-            i: t_i \leq t
-    \}, \quad i \in \{1,2 , \dots, M \}
-\end{aligned}
-```
-where the index $i$ runs over the projected 
-delivery times $t_i$.
-
-# `get_stochastic_perturbation.jl`
-```@docs
-get_stochastic_perturbation(json_file_name="parameters_model.json")
-```
-# `rhs_evaluation.jl`
-```@docs
-rhs_evaluation!(t, x, opt_policy, a_t, k, parameters)
-```
 ## `compute_cost(x, parameters)`
 ```@docs
 ```
@@ -75,14 +44,56 @@ deploy of the underlying vaccination campaing by
                     m_4 (X_{vac}(t) - X_{vac}(t_{k}))
     \end{aligned}
 ```
+## `get_interval_solution`
+
+# `get_path_plot.jl`
 
 # `get_solution_path.jl`
 
-## `get_vaccine_stock_coverage.jl`
+# `get_stencil_projection.jl`
+```@docs
+get_stencil_projection(t, parameters)
+```
+This function is implemten by computing
+
+```math
+\begin{aligned}
+    \eta(t): = \sup
+        \{
+            i: t_i \leq t
+    \}, \quad i \in \{1,2 , \dots, M \}
+\end{aligned}
+```
+where the index $i$ runs over the projected 
+delivery times $t_i$.
+
+# `get_stochastic_perturbation.jl`
+```@docs
+get_stochastic_perturbation(json_file_name="parameters_model.json")
+```
 
 ## `get_vaccine_action.jl`
 
-## `get_interval_solution`
+## `get_vaccine_stock_coverage.jl`
+
+
+## `load_parameters.jl`
+
+```@docs
+load_parameters(json_file_name="../data/parameters_model.json")
+```
+## `rhs_evaluation.jl`
+```@docs
+rhs_evaluation!(t, x, opt_policy, a_t, k, parameters)
+```
+## `save_interval_solution.jl`
+
+## `save_parameters_json.jl`
+
+## `save_solution.jl`
+
+
+
 
 
 # References
