@@ -14,7 +14,6 @@ state and action.
 ...
 """
 function compute_cost(x, parameters)
-    
     m_yll = parameters.yll_weight[1]
     m_yld = parameters.yld_weight[1]
     m_stock_cost = parameters.stock_cost_weight[1]
