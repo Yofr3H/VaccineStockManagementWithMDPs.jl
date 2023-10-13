@@ -6,7 +6,7 @@ Markov Decission Processes. See
 to details.
 """
 module VaccineStockManagementWithMDPs
-    using JSON, DataFrames, Distributions, CSV, PlotlyJS, LaTeXStrings
+    using JSON, JSONTables, DataFrames, Distributions, CSV, PlotlyJS, LaTeXStrings
     using Dates, ProgressMeter
     export greet_vaccine_stock_management_with_mdps
     export load_parameters
