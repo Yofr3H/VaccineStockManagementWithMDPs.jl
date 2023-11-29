@@ -51,10 +51,8 @@ deploy of the underlying vaccination campaing by
 # `get_solution_path.jl`
 
 # `get_stencil_projection.jl`
-```@docs
-get_stencil_projection(t, parameters)
-```
-This function is implemten by computing
+
+This function is implemented by computing
 
 ```math
 \begin{aligned}
@@ -68,9 +66,7 @@ where the index $i$ runs over the projected
 delivery times $t_i$.
 
 # `get_stochastic_perturbation.jl`
-```@docs
-get_stochastic_perturbation(json_file_name="parameters_model.json")
-```
+
 
 ## `get_vaccine_action.jl`
 
@@ -79,13 +75,9 @@ get_stochastic_perturbation(json_file_name="parameters_model.json")
 
 ## `load_parameters.jl`
 
-```@docs
-load_parameters(json_file_name="../data/parameters_model.json")
-```
+
 ## `rhs_evaluation.jl`
-```@docs
-rhs_evaluation!(t, x, opt_policy, a_t, k, parameters)
-```
+
 ## `save_interval_solution.jl`
 
 ## `save_parameters_json.jl`
