@@ -73,13 +73,12 @@ if $k$ represents the $k$-delivery of vaccine, $k=1,\dots,K.$
 
 ### Discretization $SEIRDX_{vac}$ model
 
-To generate an optimal inventory vaccine problem, as first step, we apply a discretization of the ODE system ($SEIRDVX_{vac}$) under the time-delivery sub intervals. Consider for each time sub-interval $k$  a grid time $N_k$ partition of sub interval $[t_{*}^{(k)},t^{*(k)}].$ We define
+To generate an optimal inventory vaccine problem, as first step, we apply a discretization of the ODE system $SEIRDVX_{vac}$ under the time-delivery sub intervals. Consider for each time sub-interval $k$  a grid time $N_k$ partition of sub interval $[t_{*}^{(k)},t^{*(k)}].$ We define
 
 $h_k:= \frac{t^{*(k)} - t_{*}^{(k)}}{N_k}.$ 
 
 If $t_n^{(k)}$ denotes the time of the $n$ step SEIR model for the $k$ sub interval, then
 
-```math
- t_n^{(k)}=nh_k \in [t_{*}^{(k)},t^{*(k)}], \quad \quad k=1,\dots, K.
- ```
-To validate the extremes, $t_0^{(k)}=t_{*}^{(k)}$ and $t_{N_k}^{(k)}=N_k h_k =t^{*(k)}$
+$t_n^{(k)} = nh_k \in [t_{*}^{(k)},t^{*(k)}], \quad \quad k=1,\dots, K.$
+
+To validate the extremes, $t_0^{(k)}=t_{*}^{(k)}$ and $t_{N_k}^{(k)}=N_k h_k =t^{*(k)}.$

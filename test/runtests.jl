@@ -51,6 +51,8 @@ using DataFrames
             zip(header_strs, x_new)
         )
     )
+    x01, df1 = VaccineStockManagementWithMDPs.get_solution_path!(p)
+
     @test(
         VaccineStockManagementWithMDPs.load_parameters().N_grid_size[1] == 500
     )
