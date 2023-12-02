@@ -8,8 +8,7 @@ Generates over each point of stencil projection the values of all compartmental 
 - `df_solution::DataFrame`: Dataframe with all parameters.
 ... 
 """
-using JSON, DataFrames, Distributions, CSV
-using PlotlyJS, LaTeXStrings
+
 include("load_parameters.jl")
 include("rhs_evaluation.jl")
 include("get_vaccine_stock_coverage.jl")

@@ -10,7 +10,7 @@ Plots the values of all compartments for points of a given interval time
 - `parameters::DataFrame`: Current parameters.
 ...
 """
-using PlotlyJS, DataFrames, CSV
+
 function get_charts(data_file, parameters)
     df_solution = DataFrame(CSV.File(data_file))
     config = PlotConfig(
