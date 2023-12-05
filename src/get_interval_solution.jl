@@ -18,8 +18,8 @@ Generate the values of all compartments for points of a given interval time
 - `parameters::DataFrame`: Current parameters.
 ...
 """
-include("rhs_evaluation.jl")
-include("get_stencil_projection.jl")
+#include("rhs_evaluation.jl")
+#include("get_stencil_projection.jl")
 
 function get_interval_solution!(
     time_interval, x, opt_policy, a_t, k, parameters
