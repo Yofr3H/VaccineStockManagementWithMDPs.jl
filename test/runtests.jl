@@ -1,6 +1,6 @@
 using VaccineStockManagementWithMDPs
 using Test
-using DataFrames
+using PlotlyJS, DataFrames, CSV
 
 @testset "VaccineStockManagementWithMDPs.jl" begin
     @test(
@@ -52,7 +52,8 @@ using DataFrames
         )
     )
     x01, df1 = VaccineStockManagementWithMDPs.get_solution_path!(p)
-
+    @test((x01.D[1] + x01.E[1] + x01.I_A[1] + x01.I_S[1] + x01.R[1] + x01.S[1] + x01.V[1]) == x01.CL[1]
+    )
     @test(
         VaccineStockManagementWithMDPs.load_parameters().N_grid_size[1] == 500
     )
