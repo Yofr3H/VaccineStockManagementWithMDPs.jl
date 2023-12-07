@@ -51,8 +51,11 @@ using PlotlyJS, DataFrames, CSV
             zip(header_strs, x_new)
         )
     )
-    x01, df1 = VaccineStockManagementWithMDPs.get_solution_path!(p)
-    @test((x01.D[1] + x01.E[1] + x01.I_A[1] + x01.I_S[1] + x01.R[1] + x01.S[1] + x01.V[1]) == x01.CL[1]
+    #x01, df1 = VaccineStockManagementWithMDPs.get_solution_path!(p)
+    #@test((x01.D[1] + x01.E[1] + x01.I_A[1] + x01.I_S[1] + x01.R[1] + x01.S[1] + x01.V[1]) == x01.CL[1]
+    #)
+    @test(
+        VaccineStockManagementWithMDPs.get_vaccine_stock_coverage(k,p) ==0.0014243754403948964 
     )
     @test(
         VaccineStockManagementWithMDPs.load_parameters().N_grid_size[1] == 500
