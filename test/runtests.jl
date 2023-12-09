@@ -92,7 +92,10 @@ using CSV
     @test(
         sol_1[end,13] == 0.023156632531811085          
     )
-    #VaccineStockManagementWithMDPs.get_solution_path!(p)
+    #s, df_sol11 = VaccineStockManagementWithMDPs.get_solution_path!(p)
+    #@test(
+    #    df_sol11.CL[end] == 1.0
+    #)
     @test(
         VaccineStockManagementWithMDPs.get_vaccine_stock_coverage(k,p) == 0.0014243754403948964 
     )
