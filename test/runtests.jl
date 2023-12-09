@@ -73,25 +73,26 @@ using CSV
                    k_0,
                    p
                )
-    #opt_sol_1 = sol_1
-    #prefix = "df_sol_"
-    #sufix = "1.csv"
-    #file = "./data/" * prefix * sufix
-    #df_sol_1 = VaccineStockManagementWithMDPs.save_interval_solution(
-    #    opt_sol_1;
-    #    file_name = file
-    #)
-    #rand_p = VaccineStockManagementWithMDPs.get_stochastic_perturbation()
-    #@test(
-    #    rand_p.t_delivery[2] <= rand_p.t_delivery[3] 
-    #) 
-    #@test(
-    #    df_sol_1.time[end] == 80.0
-    #)
+    opt_sol_1 = sol_1
+    prefix = "df_sol_"
+    sufix = "1.csv"
+    file = "./" * prefix * sufix #"./data/" * prefix * sufix
+    df_sol_1 = VaccineStockManagementWithMDPs.save_interval_solution(
+        t_interval_1,
+        opt_sol_1;
+        file_name = file
+    )
+    rand_p = VaccineStockManagementWithMDPs.get_stochastic_perturbation()
+    @test(
+        rand_p.t_delivery[2] <= rand_p.t_delivery[3] 
+    ) 
+    @test(
+        df_sol_1.time[end] == 80.0
+    )
     @test(
         sol_1[end,13] == 0.023156632531811085          
     )
-    VaccineStockManagementWithMDPs.get_solution_path!(p)
+    #VaccineStockManagementWithMDPs.get_solution_path!(p)
     @test(
         VaccineStockManagementWithMDPs.get_vaccine_stock_coverage(k,p) == 0.0014243754403948964 
     )
