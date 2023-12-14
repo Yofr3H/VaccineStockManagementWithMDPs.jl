@@ -45,13 +45,21 @@ deploy of the underlying vaccination campaing by
     \end{aligned}
 ```
 ## `get_interval_solution`
+```@docs
+```
+From a point of solution of SEIRVD model $x,$ a stock level $k,$ and the most recent parameters, this function evaluates the SEIRVD solution for possible vaccine control $opt_policy$ in each sequence of time point of  $time_ interval,$
 
 # `get_path_plot.jl`
+```@docs
+```
 
 # `get_solution_path.jl`
-
+```@docs
+```
+ 
 # `get_stencil_projection.jl`
-
+```@docs
+```
 This function is implemented by computing
 
 ```math
