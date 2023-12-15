@@ -44,15 +44,15 @@ deploy of the underlying vaccination campaing by
                     m_4 (X_{vac}(t) - X_{vac}(t_{k}))
     \end{aligned}
 ```
-## `get_interval_solution`
+## `get_interval_solution!(time_interval, x, opt_policy, a_t, k,parameters)`
 ```@docs
 ```
 From a point of solution of SEIRVD model $x,$ a stock level $k,$ and the most recent parameters, this function evaluates the SEIRVD solution for possible vaccine control $opt_policy$ in each sequence of time point of  $time_ interval,$
 
-# `get_path_plot.jl`
+# `get_path_plot(df_solution)`
 ```@docs
 ```
-
+From the solution stored in data frame $df_solution$, this function returns the graph evolution of counter of each compartment in the  SEIRVD and the vaccine stock level evolution.
 # `get_solution_path.jl`
 ```@docs
 ```
@@ -73,11 +73,11 @@ This function is implemented by computing
 where the index $i$ runs over the projected 
 delivery times $t_i$.
 
-# `get_stochastic_perturbation.jl`
+# `get_stochastic_perturbation(son_file_name)`
+For the arrive of inventory vaccine order return a new delivery time  and the new size of this order. The new delivery time is simulated under the hipothesis that the time betwen orders follows a normal distribution with mean this time increment and standard deviation the root of the same time increment. The new size of vaccine order is simulated under the hipothesis that the size order follows a truncated normal distribution with mean the size order $K_p$ that was previously programed and the standard deviation is the half of the root of this size programed order. The truncated normal is considered with support $[0,2K_p].$    
 
-
-## `get_vaccine_action.jl`
-
+## `get_vaccine_action!(X_C,t,parameters)`
+Calculates at time $t,$ the possible percentage of vaccine coverage population when the current inventory level of vaccines is $X_C$  according to size of time horizon.  
 ## `get_vaccine_stock_coverage.jl`
 
 
