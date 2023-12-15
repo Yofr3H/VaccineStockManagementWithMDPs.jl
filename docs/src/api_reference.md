@@ -53,11 +53,12 @@ From a point of solution of SEIRVD model $x,$ a stock level $k,$ and the most re
 ```@docs
 ```
 From the solution stored in data frame $df_solution$, this function returns the graph evolution of counter of each compartment in the  SEIRVD and the vaccine stock level evolution.
-# `get_solution_path.jl`
+# `get_solution_path!(parameters)`
 ```@docs
 ```
- 
-# `get_stencil_projection.jl`
+ From of the parameters, this function returns the initial values and the solution of $SEIRVDX_{vac} model.
+
+# `get_stencil_projection(t, parameters)`
 ```@docs
 ```
 This function is implemented by computing
@@ -78,19 +79,25 @@ For the arrive of inventory vaccine order return a new delivery time  and the ne
 
 ## `get_vaccine_action!(X_C,t,parameters)`
 Calculates at time $t,$ the possible percentage of vaccine coverage population when the current inventory level of vaccines is $X_C$  according to size of time horizon.  
-## `get_vaccine_stock_coverage.jl`
+## `get_vaccine_stock_coverage(k, parameters)`
+Returns el percentage of popullation to vaccine when the inventory level of interest is $k$ and use the current parameters 
 
+## `load_parameters(json_file_name)`
 
-## `load_parameters.jl`
+The function acces of the archive $json_file_name$ all initial parameters of SERIVDX_{vac}$ inventory model. 
 
+## `rhs_evaluation!(t, x, opt_policy,  a_t, k, parameters)`
 
-## `rhs_evaluation.jl`
+The function evaluates the solution of SERIVDX_{vac}$ inventory model at time $t+1$ when the solution in the time $t$ is $x,$ is used the value $opt_policy$ as policy, the avaliable inventory level is $k$ and the percentage to vaccine population is $a_t$ when $parameters$ are the current parameters.
 
-## `save_interval_solution.jl`
+## `save_interval_solution(x,header_strs,file_name)`
 
-## `save_parameters_json.jl`
+The function save the array solution $x$ in a data frame with the $header_strs$ as headers and name df_solution. Also, the df_solution is saved in CSV file with name $file_name.$
 
-## `save_solution.jl`
+## `save_parameters_json(par,file_name) `
+
+Save the data frame of parameters $par$ in the json file with name $file_name$ that concatenate to this the current date. 
+
 
 
 
