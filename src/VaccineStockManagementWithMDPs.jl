@@ -7,6 +7,7 @@ to details.
 """
 module VaccineStockManagementWithMDPs
     using JSON, JSONTables, DataFrames, Distributions, CSV, PlotlyJS, LaTeXStrings
+    import Dates
     using Dates, ProgressMeter
     export greet_vaccine_stock_management_with_mdps
     export compute_cost

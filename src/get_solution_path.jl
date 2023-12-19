@@ -9,14 +9,7 @@ Generates over each point of stencil projection the values of all compartmental 
 ... 
 """
 
-include("load_parameters.jl")
-include("rhs_evaluation.jl")
-include("get_vaccine_stock_coverage.jl")
-include("get_vaccine_action.jl")
-include("save_interval_solution.jl")
-include("get_interval_solution.jl")
-include("get_stencil_projection.jl")
-include("get_charts.jl")
+
 
 function get_solution_path!(parameters::DataFrame)
     N_grid_size = parameters.N_grid_size[1];
@@ -180,7 +173,7 @@ function get_solution_path!(parameters::DataFrame)
             save_interval_solution(
                 opt_solution_t; 
                 file_name = file
-        )
+                )
         solution_list = push!(solution_list, df_solution_t)
         df_solution = [df_solution; df_solution_t]
     end
